@@ -1,6 +1,6 @@
 [submodule "src/kernel"]
 	path = src/kernel
-	url = https://github.com/hermit-os/kernel.git
+	url = https://github.com/zyuiop/hermit-rs-kernel.git
 [submodule "src/binutils"]
 	path = src/binutils
 	url = https://github.com/hermit-os/binutils.git

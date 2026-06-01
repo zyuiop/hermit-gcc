@@ -34,7 +34,7 @@ jobs:
         with:
           targets: ${{ env.BAKE_TARGET }}
           set: |
-            *.tags=ghcr.io/hermit-os/hermit-gcc
+            *.tags=ghcr.io/zyuiop/hermit-gcc
             *.output=type=image,push-by-digest=${{ github.ref_name == 'main' && 'true' || 'false' }},name-canonical=true,push=${{ github.ref_name == 'main' && 'true' || 'false' }}
       - name: Export digest
         if: github.ref_name == 'main'
@@ -74,8 +74,8 @@ jobs:
       - name: Create manifest list and push
         working-directory: ${{ runner.temp }}/digests-${{ matrix.target_arch }}
         run: |
-          docker buildx imagetools create -t ghcr.io/hermit-os/hermit-gcc:${{ matrix.target_arch }} \
-            $(printf 'ghcr.io/hermit-os/hermit-gcc@sha256:%s ' *)
+          docker buildx imagetools create -t ghcr.io/zyuiop/hermit-gcc:${{ matrix.target_arch }} \
+            $(printf 'ghcr.io/zyuiop/hermit-gcc@sha256:%s ' *)
       - name: Inspect image
         run: |
-          docker buildx imagetools inspect ghcr.io/hermit-os/hermit-gcc:${{ matrix.target_arch }}
+          docker buildx imagetools inspect ghcr.io/zyuiop/hermit-gcc:${{ matrix.target_arch }}
