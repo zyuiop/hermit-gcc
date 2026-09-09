@@ -9,7 +9,8 @@
 	url = https://github.com/hermit-os/gcc.git
 [submodule "src/newlib"]
 	path = src/newlib
-	url = https://github.com/hermit-os/newlib.git
+	url = https://github.com/zyuiop/newlib.git
+	branch = patched-newlib-4.5
 [submodule "src/pthread-embedded"]
 	path = src/pthread-embedded
 	url = https://github.com/hermit-os/pthread-embedded.git
